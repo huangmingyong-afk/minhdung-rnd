@@ -104,7 +104,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offs
 .st b{display:block;font-family:"Playfair Display",serif;font-size:26px;line-height:1}
 .st span{font-size:13px;color:var(--mut)}
 /* services */
-.svc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .sv{padding:20px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
 .sv:hover{transform:translateY(-4px);box-shadow:0 20px 36px -26px rgba(21,59,53,.6)}
 .sv i{display:grid;place-items:center;width:52px;height:52px;border-radius:16px}
@@ -259,9 +259,9 @@ footer{border-top:1px solid var(--line);margin-top:clamp(28px,3vw,44px)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:18px;font-size:13px;color:var(--mut)}
 footer a{text-decoration:none}
 /* responsive */
-@media(max-width:1280px){.svc{grid-template-columns:repeat(3,minmax(0,1fr))}.imp{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.imp .tags{grid-column:1/-1}}
+@media(max-width:1280px){.imp{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.imp .tags{grid-column:1/-1}}
 @media(max-width:1180px){.nav{display:none}.burger{display:grid}.side{display:none}.about{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}.about .st{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr))}.proc{grid-template-columns:minmax(0,1fr)}.jr{grid-template-columns:minmax(0,1fr)}.ctab{grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr)}.ctab>p{display:none}}
-@media(max-width:900px){.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.pl2{grid-template-columns:minmax(0,1fr)}.press{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}.steps::before{display:none}.pkg{grid-template-columns:minmax(0,1fr)}.ct{grid-template-columns:minmax(0,1fr) auto}.ct>div:first-child{grid-column:1/-1}.qr{border:0;padding:0}.imp{grid-template-columns:minmax(0,1fr)}.ist{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}.ist div:nth-child(3){border-left:0}}
+@media(max-width:900px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.pl2{grid-template-columns:minmax(0,1fr)}.press{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}.steps::before{display:none}.pkg{grid-template-columns:minmax(0,1fr)}.ct{grid-template-columns:minmax(0,1fr) auto}.ct>div:first-child{grid-column:1/-1}.qr{border:0;padding:0}.imp{grid-template-columns:minmax(0,1fr)}.ist{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}.ist div:nth-child(3){border-left:0}}
 @media(max-width:760px){.hb{grid-template-columns:minmax(0,1fr)}.pz{order:-1;min-height:300px;margin-top:-6px}.person{height:calc(100% + 8px)}.disc{width:270px}.badge{width:100px;right:0;top:8%}.badge b{font-size:22px}.chip{padding:8px 10px}.chip b{font-size:19px}.chip i{display:none}.chip.a{left:0;top:30%}.chip.b{left:auto;right:0;bottom:8%}.htxt{padding-top:16px}.about{grid-template-columns:minmax(0,1fr)}.about .st{grid-template-columns:repeat(2,minmax(0,1fr))}.tl{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:140px}.gal button:nth-child(6){grid-column:span 1}.gal button:nth-child(8){grid-column:span 2}.ctab{grid-template-columns:minmax(0,1fr);padding-bottom:0}.ctab .hand{display:none}.ctt{padding-bottom:4px}.ctab .pp{min-height:260px}.ct{grid-template-columns:minmax(0,1fr)}.qr{order:3}}
 @media(max-width:560px){#yrs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%}#yrs button{flex:none;min-height:40px;padding:0 14px}#prev,#next{display:none}.shd .rbar{width:100%}.cov{flex-basis:78vw}#navcta{display:none}.svc{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sv{padding:14px}.sv i{width:44px;height:44px}.sv p{font-size:13px}.pg{grid-template-columns:minmax(0,1fr)}.pj .im{aspect-ratio:16/10}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.pl a{grid-template-columns:96px minmax(0,1fr);gap:12px}.pl a .arw{display:none}.rw{grid-template-columns:auto minmax(0,1fr);padding:10px 12px}.rw em{grid-column:2;justify-self:start}.meta a{display:none}.cta .btn{flex:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.badge svg{animation:none}.btn,.sv,.pj .im img,.gal img,.pl a{transition:none}}
@@ -302,7 +302,7 @@ footer a{text-decoration:none}
 <p class="side l">Nghiên cứu thị trường <span>·</span> Phát triển sản phẩm</p>
 <p class="side r">Đóng gói sản phẩm <span>·</span> Truyền thông chuyên gia</p>
 <div class="wrap">
-<div class="meta"><span><svg class="ic"><use href="#i-star"/></svg>R&amp;D · Bất động sản dự án</span><a href="#lien-he">Sẵn sàng hợp tác <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<div class="meta"><span><svg class="ic"><use href="#i-star"/></svg>R&amp;D · Bất động sản dự án</span><a href="#lien-he">Kết nối chuyên môn <svg class="ic"><use href="#i-arrow"/></svg></a></div>
 <div class="stage">
 <h1 class="word" id="word" aria-label="Portfolio – Hoàng Hữu Minh Dũng">Portfolio</h1>
 <div class="hb">
@@ -316,7 +316,7 @@ footer a{text-decoration:none}
 <div class="pz">
 <div class="disc"></div>
 <img class="person" src="img/cut-hero.webp" alt="Hoàng Hữu Minh Dũng thuyết trình tại sự kiện Gold Coast Vũng Tàu" width="742" height="1036">
-<div class="badge"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text font-size="8" font-weight="700" fill="#153B35" font-family="Be Vietnam Pro, sans-serif" textLength="232" lengthAdjust="spacing"><textPath href="#ring" textLength="232" lengthAdjust="spacing">SẴN SÀNG HỢP TÁC • R&amp;D BẤT ĐỘNG SẢN •</textPath></text></svg><b>10+<small>năm</small></b></div>
+<div class="badge"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text font-size="8" font-weight="700" fill="#153B35" font-family="Be Vietnam Pro, sans-serif" textLength="232" lengthAdjust="spacing"><textPath href="#ring" textLength="232" lengthAdjust="spacing">KẾT NỐI CHUYÊN MÔN • R&amp;D BẤT ĐỘNG SẢN •</textPath></text></svg><b>10+<small>năm</small></b></div>
 <div class="chip a"><i><svg class="ic"><use href="#i-db"/></svg></i><span><b>~5.000</b>dự án trong kho dữ liệu</span></div>
 <div class="chip b"><i><svg class="ic"><use href="#i-chart"/></svg></i><span><b>500+</b>dự án trực tiếp nghiên cứu</span></div>
 </div>
@@ -331,7 +331,7 @@ footer a{text-decoration:none}
 <div class="tx">
 <span class="eye">Giới thiệu</span>
 <h2 class="h2" style="font-size:clamp(26px,2.4vw,38px)">Biến dữ liệu thành <em>sản phẩm thị trường cần.</em></h2>
-<p style="margin-top:12px">Hơn 7 năm dẫn dắt Ban Nghiên cứu &amp; Phát triển tại BHS, tôi đứng ở điểm giao giữa thị trường và sản phẩm: nghiên cứu cung, cầu, giá và thanh khoản trên toàn quốc để giúp chủ đầu tư trả lời câu hỏi khó nhất của một dự án – làm sản phẩm gì, cho ai và bán như thế nào.</p>
+<p style="margin-top:12px">Hơn 7 năm gắn bó với BHS, trong đó từ năm 2021 dẫn dắt Ban Nghiên cứu &amp; Phát triển, tôi đứng ở điểm giao giữa thị trường và sản phẩm: nghiên cứu cung, cầu, giá và thanh khoản trên toàn quốc để giúp chủ đầu tư trả lời câu hỏi khó nhất của một dự án – làm sản phẩm gì, cho ai và bán như thế nào.</p>
 <p>Đi lên từ marketing số, bán hàng rồi quản lý dự án, tôi đưa vào mỗi đề xuất góc nhìn của người trực tiếp bán hàng, để sản phẩm không chỉ đúng trên giấy mà còn bán được ngoài thị trường – từ đô thị nghỉ dưỡng ven biển đến căn hộ nội đô.</p>
 </div>
 <div class="st" id="stats"></div>
@@ -353,8 +353,8 @@ footer a{text-decoration:none}
 <section class="sec" style="padding-top:0"><div class="wrap">
 <div class="imp">
 <div><span class="eye">Dấu ấn R&amp;D</span><h2>Dữ liệu dẫn đường cho mọi quyết định sản phẩm.</h2></div>
-<div class="ist"><div><b>706</b><span>dự án theo dõi liên tục</span></div><div><b>19</b><span>kỳ báo cáo thị trường từ 2021</span></div><div><b>16</b><span>nhân sự quy mô Ban R&amp;D</span></div><div><b>Toàn quốc</b><span>phạm vi nghiên cứu</span></div></div>
-<div class="tags"><span>Nghiên cứu thị trường</span><span>Kho dữ liệu dự án</span><span>Đánh giá dự án</span><span>Định vị sản phẩm</span><span>Giá bán &amp; CSBH</span><span>Chiến lược phân kỳ</span><span>Đào tạo sales</span><span>Ứng dụng AI</span></div>
+<div class="ist"><div><b>706</b><span>dự án theo dõi liên tục</span></div><div><b>19</b><span>kỳ báo cáo thị trường từ 2021</span></div><div><b>16</b><span>nhân sự tối đa trong Ban R&amp;D</span></div><div><b>Toàn quốc</b><span>phạm vi nghiên cứu</span></div></div>
+<div class="tags"><span>Nghiên cứu thị trường</span><span>Kho dữ liệu dự án</span><span>Đánh giá dự án</span><span>Rà soát pháp lý</span><span>Đánh giá đầu tư</span><span>Định vị sản phẩm</span><span>Giá bán &amp; CSBH</span><span>Chiến lược phân kỳ</span><span>Đào tạo sales</span><span>Ứng dụng AI</span></div>
 </div>
 </div></section>
 
@@ -374,10 +374,10 @@ footer a{text-decoration:none}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh"><button type="button" id="lbx" aria-label="Đóng" style="top:14px;right:14px">×</button><button type="button" id="lbp" aria-label="Ảnh trước" style="left:14px;top:50%"><svg class="ic" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button><figure style="margin:0"><img id="lbi" alt=""><p id="lbc"></p></figure><button type="button" id="lbn" aria-label="Ảnh sau" style="right:14px;top:50%"><svg class="ic"><use href="#i-arrow"/></svg></button></div>
 
 <section class="sec" id="bao-chi" style="padding-top:0"><div class="wrap">
-<div class="shd"><div><span class="eye">Báo chí</span><h2 class="h2">Báo chí &amp; <em>truyền thông</em></h2></div><p class="l">Nhận định thị trường được trích dẫn trên các báo kinh tế, bất động sản năm 2026.</p></div>
+<div class="shd"><div><span class="eye">Báo chí</span><h2 class="h2">Báo chí &amp; <em>truyền thông</em></h2></div><p class="l">Nhận định thị trường được trích dẫn trên các báo kinh tế, bất động sản năm 2026. Báo ghi chức danh “Trưởng bộ phận Nghiên cứu &amp; Phát triển, BHS Property” – BHS Property thuộc BHS Group.</p></div>
 <div class="press">
 <div class="pod"><div class="vid" id="vid"><img src="img/yt.jpg" alt="Ảnh bìa podcast #NgheKho EP04"><a class="vplay" id="vplay" href="https://www.youtube.com/watch?v=wnREVhRFvXY" target="_blank" rel="noopener" aria-label="Phát video podcast #NgheKho EP04"><svg class="ic" style="width:28px;height:28px"><use href="#i-play"/></svg></a></div>
-<div class="b"><small>Podcast #NgheKho EP04 · BHS × Người Trong Muôn Nghề · 13/08/2026</small><h3>Cái tôi, sự chủ quan và bài học 2.000 tỷ đồng trong R&amp;D</h3><p>Quy trình R&amp;D sản phẩm bất động sản, dữ liệu thời gian thực, cái giá khi thiên kiến cá nhân lấn át dữ liệu và vai trò của AI.</p><a class="more" href="https://www.youtube.com/watch?v=wnREVhRFvXY" target="_blank" rel="noopener">Xem trên YouTube <svg class="ic"><use href="#i-ne"/></svg></a></div></div>
+<div class="b"><small>Podcast #NgheKho EP04 · BHS × Người Trong Muôn Nghề · 13/08/2026</small><h3>Cái tôi, sự chủ quan và bài học 2.000 tỷ đồng trong R&amp;D</h3><p>Quy trình R&amp;D sản phẩm bất động sản, dữ liệu thời gian thực, bài học về việc kiểm chứng thiên kiến cá nhân bằng dữ liệu trước mỗi quyết định sản phẩm và vai trò của AI.</p><a class="more" href="https://www.youtube.com/watch?v=wnREVhRFvXY" target="_blank" rel="noopener">Xem trên YouTube <svg class="ic"><use href="#i-ne"/></svg></a></div></div>
 <div class="pl" id="press"></div>
 </div>
 </div></section>
@@ -391,14 +391,14 @@ footer a{text-decoration:none}
 <section class="sec" id="hanh-trinh" style="padding-top:0"><div class="wrap">
 <div class="shd"><div><span class="eye">Hành trình</span><h2 class="h2">Hành trình <em>nghề nghiệp</em></h2></div><p class="l">Từ nội dung số đến bán hàng, khởi nghiệp, quản lý dự án rồi nghiên cứu và phát triển sản phẩm.</p></div>
 <div class="jr"><div class="tl" id="tl"></div>
-<div class="card edu"><div><i><svg class="ic"><use href="#i-cap"/></svg></i><p><b>Đại học Kinh tế Quốc dân</b><span>Cử nhân Quản trị Kinh doanh, chuyên ngành Bất động sản · 2009 – 2013</span></p></div><div><i><svg class="ic"><use href="#i-briefcase"/></svg></i><p><b>Kỹ năng nền tảng</b><span>Từ giai đoạn marketing số và bán hàng</span></p></div><div class="chips"><span>Facebook Ads</span><span>Google Ads</span><span>Content &amp; social media</span><span>Business planning</span><span>Thuyết trình</span></div></div>
+<div class="card edu"><div><i><svg class="ic"><use href="#i-cap"/></svg></i><p><b>Đại học Kinh tế Quốc dân</b><span>Cử nhân Quản trị Kinh doanh, chuyên ngành Bất động sản · 2009 – 2013</span></p></div><div><i><svg class="ic"><use href="#i-briefcase"/></svg></i><p><b>Kỹ năng chuyên môn</b><span>Năng lực hiện tại và nền tảng marketing – bán hàng</span></p></div><div class="chips"><span>Nghiên cứu thị trường</span><span>Phân tích dữ liệu</span><span>Đánh giá dự án</span><span>Rà soát pháp lý</span><span>Đánh giá đầu tư</span><span>Định giá &amp; CSBH</span><span>Quản lý đội ngũ</span><span>Ứng dụng AI</span><span>Thuyết trình</span><span>Marketing số</span></div></div>
 </div>
 </div></section>
 
 <section class="sec" id="lien-he" style="padding-top:0"><div class="wrap">
 <div class="ctab">
-<div class="ctt"><span class="eye">Cùng làm việc</span><h2>Có dự án cần định hướng sản phẩm?</h2><a class="btn w" href="https://www.linkedin.com/in/minhdung244/" target="_blank" rel="noopener">Kết nối ngay <svg class="ic"><use href="#i-arrow"/></svg></a></div>
-<p>Sẵn sàng trao đổi về nghiên cứu thị trường, phát triển sản phẩm và hợp tác dự án.</p>
+<div class="ctt"><span class="eye">Kết nối</span><h2>Cùng trao đổi về thị trường và sản phẩm</h2><a class="btn w" href="https://www.linkedin.com/in/minhdung244/" target="_blank" rel="noopener">Kết nối ngay <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p>Rất vui được trao đổi về nghiên cứu thị trường và phát triển sản phẩm bất động sản.</p>
 <div class="pp"><img src="img/cut-cta.webp" alt="Ảnh chân dung Hoàng Hữu Minh Dũng" width="629" height="800" loading="lazy"></div>
 <span class="hand">Dữ liệu dẫn đường ♡</span>
 </div>
@@ -428,7 +428,7 @@ if(document.fonts)document.fonts.ready.then(fit);
 const ST=[['i-db','~5.000','dự án trong kho R&D'],['i-chart','706','dự án theo dõi liên tục'],['i-layers','500+','dự án trực tiếp nghiên cứu'],['i-doc','19','báo cáo thị trường từ 2021']];
 $('stats').innerHTML=ST.map(s=>`<div><i><svg class="ic"><use href="#${s[0]}"/></svg></i><p><b>${esc(s[1])}</b><span>${esc(s[2])}</span></p></div>`).join('');
 
-const SV=[['i-chart','Nghiên cứu thị trường','Phân tích kinh tế – xã hội, cung, cầu, giá và thanh khoản trên toàn quốc.'],['i-db','Kho dữ liệu dự án','Chủ trì xây dựng kho gần 5.000 dự án, 706 dự án theo dõi liên tục.'],['i-doc','Báo cáo định kỳ','Chuỗi báo cáo thị trường theo quý, nửa năm và năm từ 2021.'],['i-bulb','Tư vấn phát triển sản phẩm','Cùng Ban Concept tư vấn quy hoạch, sản phẩm theo vòng đời dự án.'],['i-layers','Đóng gói sản phẩm','Concept, giá bán, chính sách bán hàng, chiến lược phân kỳ.'],['i-mic','Truyền thông chuyên gia','Xây dựng thương hiệu “BHS R&D” qua báo chí và podcast.']];
+const SV=[['i-chart','Nghiên cứu thị trường','Phân tích kinh tế – xã hội, cung, cầu, giá và thanh khoản trên toàn quốc.'],['i-db','Kho dữ liệu dự án','Chủ trì xây dựng kho gần 5.000 dự án, 706 dự án theo dõi liên tục.'],['i-doc','Báo cáo định kỳ','Chuỗi báo cáo thị trường theo quý, nửa năm và năm từ 2021.'],['i-bulb','Tư vấn phát triển sản phẩm','Cùng Ban Concept tư vấn quy hoạch, sản phẩm theo vòng đời dự án.'],['i-layers','Đóng gói sản phẩm','Concept, giá bán, chính sách bán hàng, chiến lược phân kỳ.'],['i-doc','Đánh giá dự án & pháp lý','Đánh giá chi tiết từng dự án và rà soát hồ sơ pháp lý để xác định mức độ sẵn sàng triển khai, mở bán.'],['i-briefcase','Đánh giá đầu tư','Đánh giá mức giá, khả năng hấp thụ và hiệu quả đầu tư của dự án so với mặt bằng thị trường.'],['i-mic','Truyền thông chuyên gia','Xây dựng thương hiệu “BHS R&D” qua báo chí và podcast.']];
 $('svc').innerHTML=SV.map(s=>`<article class="card sv"><i><svg class="ic" style="width:24px;height:24px"><use href="#${s[0]}"/></svg></i><h3>${esc(s[1])}</h3><p>${esc(s[2])}</p></article>`).join('');
 
 const PR=[
@@ -458,7 +458,7 @@ const P=[['12/08/2026','Reatimes','Thị trường BĐS 6 tháng cuối năm 202
 ['21/08/2026','Thời báo Tài chính Việt Nam','Dòng tiền “khó tính”, BĐS đứng trước yêu cầu nâng chất','Thanh khoản phân hóa; H1/2026 tỷ lệ hấp thụ căn hộ TP.HCM gần 80%.','https://thoibaotaichinhvietnam.vn/dong-tien-kho-tinh-bat-dong-san-dung-truoc-yeu-cau-nang-chat-202664.html'],
 ['04/09/2026','CafeF','Thị trường BĐS phân hóa, môi giới thay đổi chiến lược bán hàng','Chi phí môi giới tăng, tỷ lệ chốt giảm buộc thị trường chọn lọc sản phẩm.','https://cafef.vn/thi-truong-bat-dong-san-phan-hoa-moi-gioi-thay-doi-chien-luoc-ban-hang-188260904071231209.chn'],
 ['09/09/2026','Tạp chí Kinh tế – Tài chính','Doanh nghiệp BĐS đứng giữa bài toán sản phẩm, giá bán và sức mua thực tế','Từ “bán cái có sẵn” sang “tạo sản phẩm thị trường cần”.','https://tapchikinhtetaichinh.vn/doanh-nghiep-bat-dong-san-dung-giua-bai-toan-san-pham-gia-ban-va-suc-mua-thuc-te-166537.html']];
-$('press').innerHTML=P.map((p,i)=>`<a class="card" href="${esc(p[4])}" target="_blank" rel="noopener"><span class="th"><img src="img/press-${p[5]||i}.jpg" alt="" loading="lazy"></span><div><small><b>${esc(p[1])}</b> · ${esc(p[0])}</small><h3>${esc(p[2])}</h3><p>${esc(p[3])}</p></div><span class="arw"><svg class="ic"><use href="#i-ne"/></svg></span></a>`).join('');
+const dk=s=>s.split('/').reverse().join('');$('press').innerHTML=P.map((p,i)=>(p[5]=p[5]||String(i),p)).sort((a,b)=>dk(b[0])<dk(a[0])?-1:1).map((p,i)=>`<a class="card" href="${esc(p[4])}" target="_blank" rel="noopener"><span class="th"><img src="img/press-${p[5]||i}.jpg" alt="" loading="lazy"></span><div><small><b>${esc(p[1])}</b> · ${esc(p[0])}</small><h3>${esc(p[2])}</h3><p>${esc(p[3])}</p></div><span class="arw"><svg class="ic"><use href="#i-ne"/></svg></span></a>`).join('');
 
 const R=[['2026','H1.2026','BHS Property'],['2026','Q1.2026','BHS Property'],['2025','Năm 2025','BHS Property'],['2025','9T.2025','BHS Property'],['2025','H1.2025','BHS Property'],['2025','Q1.2025','BHS Group'],['2024','Năm 2024','BHS Group'],['2024','Q3.2024','BHS Group'],['2024','H1.2024','BHS Group'],['2024','Q1.2024','BHS Group'],['2023','Năm 2023','BHS Group'],['2023','Q3.2023','BHS Group'],['2023','H1.2023','BHS Group'],['2023','Q1.2023','BHS Group'],['2022','Năm 2022','BHS Group'],['2022','Q3.2022','BHS Group'],['2022','6T.2022','BHS Group'],['2022','Q1.2022','BHS Group'],['2021','Năm 2021','BHS Group']];
 const rail=$('rail');
@@ -466,7 +466,7 @@ const NP=[57,59,80,65,67,57,82,48,54,53,60,49,52,46,71,44,39,26,78];
 rail.innerHTML=R.map((r,i)=>`<a class="cov" id="r${i}" href="#doc-${String(i+1).padStart(2,'0')}" aria-label="Đọc báo cáo thị trường BĐS ${esc(r[1])}, ${NP[i]} trang"><div class="im"><img src="img/bc/bc-${String(i+1).padStart(2,'0')}.webp" alt="" loading="lazy">${i==0?'<em>Mới nhất</em>':''}<i><svg class="ic" style="width:15px;height:15px"><use href="#i-doc"/></svg>Đọc · ${NP[i]} trang</i></div><div class="cp"><b>${esc(r[1])}</b><span>${esc(r[2])}</span></div></a>`).join('');
 const rd=$('rd'),rpg=$('rpages');let rdFrom=false;const cache={};
 const openDoc=async k=>{const i=+k-1;if(!(i>=0&&i<R.length))return;rd.classList.add('open');document.body.style.overflow='hidden';$('rdt').textContent='Báo cáo thị trường BĐS '+R[i][1];$('rds').textContent=R[i][2]+' · Ban Nghiên cứu & Phát triển';$('rdp').textContent=NP[i]+' trang';rpg.scrollTop=0;rpg.innerHTML='<p class="ld">Đang tải báo cáo…</p>';
-try{const d=cache[k]||(cache[k]=await fetch('r/'+k+'.json').then(x=>{if(!x.ok)throw 0;return x.json()}));if(!rd.classList.contains('open'))return;rpg.innerHTML='';d.forEach((src,j)=>{const im=new Image();im.src=src;im.alt='Trang '+(j+1)+' / '+d.length;im.loading='lazy';im.decoding='async';rpg.appendChild(im)})}catch(e){rpg.innerHTML='<p class="ld">Không tải được báo cáo. Sếp thử tải lại trang.</p>'}};
+try{const d=cache[k]||(cache[k]=await fetch('r/'+k+'.json').then(x=>{if(!x.ok)throw 0;return x.json()}));if(!rd.classList.contains('open'))return;rpg.innerHTML='';d.forEach((src,j)=>{const im=new Image();im.src=src;im.alt='Trang '+(j+1)+' / '+d.length;im.loading='lazy';im.decoding='async';rpg.appendChild(im)})}catch(e){rpg.innerHTML='<p class="ld">Không tải được báo cáo. Vui lòng tải lại trang.</p>'}};
 const closeDoc=()=>{rd.classList.remove('open');document.body.style.overflow='';rpg.innerHTML=''};
 const route=()=>{const m=location.hash.match(/^#doc-(\d\d)$/);if(m)openDoc(m[1]);else if(rd.classList.contains('open'))closeDoc()};
 rail.addEventListener('click',e=>{if(e.target.closest('.cov'))rdFrom=true});
@@ -479,7 +479,7 @@ const step=d=>rail.scrollBy({left:d*rail.querySelector('.cov').offsetWidth,behav
 $('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
 rail.addEventListener('keydown',e=>{if(e.key=='ArrowRight'){e.preventDefault();step(1)}if(e.key=='ArrowLeft'){e.preventDefault();step(-1)}});
 
-const L=[['07/2019 – nay','Trưởng ban Nghiên cứu & Phát triển','BHS Group',['Bổ nhiệm Trưởng ban Nghiên cứu & Phát triển ngày 15/10/2021','Dẫn dắt nghiên cứu thị trường toàn quốc và phát triển sản phẩm, quy mô ban đến 16 nhân sự']],
+const L=[['07/2019 – nay','Trưởng ban Nghiên cứu & Phát triển','BHS Group',['Bổ nhiệm Trưởng ban Nghiên cứu & Phát triển ngày 15/10/2021','Dẫn dắt nghiên cứu thị trường toàn quốc và phát triển sản phẩm, quy mô tối đa 16 nhân sự']],
 ['07/2017 – 07/2019','Project Manager','Cenland – Cengroup',['The Emerald (CT8 Mỹ Đình): bán hơn 1.000 căn trong 8 tháng','987 Tam Trinh, T-Place Hàng Bài: bán hết trong 1 tuần; T-Place giá 300 triệu/m²']],
 ['03/2016 – 04/2017','Đồng sáng lập','Megaland',['Tư vấn bán hàng Goldseason, An Bình City, FLC Star Tower','Tự triển khai Facebook Ads, Google Ads; đồng quản lý đội 7 người']],
 ['2014 – 2016','Phát triển cộng đồng & tư vấn BĐS','VinEcom – Vingroup · An Cư · Cenland',['Nội dung website, fanpage Adayroi.net (04/2014 – 04/2015)','Tư vấn Vinhomes Riverside (An Cư), Imperia Garden (Cenland)']]];
