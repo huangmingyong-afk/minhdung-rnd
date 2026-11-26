@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minh Dũng Portfolio</title>
+<meta name="description" content="Hoàng Hữu Minh Dũng – Trưởng ban Nghiên cứu & Phát triển BHS Group. Nghiên cứu thị trường và phát triển sản phẩm bất động sản dự án.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+/* VOICE personal-brand portfolio; refs: "PORTFOLIO" magazine sheet (hero), Theo Marin & Zayn Ali (rounded cards, impact band, process, CTA banner)
+   IDEA a printed lookbook that becomes a soft, rounded website: giant word, cut-out portrait on a coloured disc, numbered project plates
+   PICTURE the cut-out portrait (navy suit, mic) overlapping the giant word PORTFOLIO, on a terracotta disc, with a rotating availability badge
+   COLOUR fixed light lookbook: cream #F6F1E9, forest ink #153B35, leaf #2F6B45, terracotta accent #D9694A, peach tint #F8E1D4
+   TYPE Oswald 700 giant word, Playfair Display headings and name, Be Vietnam Pro text, Dancing Script for signature and notes
+   LAYOUT wide container (up to 1760px) so no empty gutters; tight section rhythm; phone: word, portrait, name, cards stacked */
+:root{color-scheme:light;--bg:#F6F1E9;--card:#FFFDF9;--ink:#153B35;--mut:#5B6A64;--leaf:#2F6B45;--leaf2:#3E7B3A;--terra:#D9694A;--peach:#F8E1D4;--mint:#E2EEE5;--line:#E4DCD0;--max:1960px}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%;display:block}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:600;text-wrap:balance}
+.wrap{width:min(100% - 2*max(3.2vw,16px),var(--max));margin-inline:auto}
+.sec{padding-block:clamp(36px,4.2vw,72px)}
+.ic{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.eye{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra)}
+.eye::after{content:"";width:28px;height:1.5px;background:currentColor}
+.h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(30px,3.2vw,50px);line-height:1.18;letter-spacing:-.01em;margin-top:8px}
+.h2 em{font-style:normal;color:var(--terra)}
+.shd{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 32px;margin-bottom:clamp(20px,2.2vw,32px)}
+.shd p.l{color:var(--mut);max-width:52ch}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:600 15px "Be Vietnam Pro",sans-serif;text-decoration:none;cursor:pointer;border:1.5px solid var(--leaf);background:var(--leaf);color:#fff;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px var(--leaf)}
+.btn.o{background:transparent;color:var(--ink);border-color:#cfc6b8}
+.btn.o:hover{border-color:var(--ink)}
+.btn.w{background:#fff;color:var(--leaf);border-color:#fff}
+.more{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;text-decoration:none;color:var(--leaf);min-height:44px;white-space:nowrap}
+.more .ic{transition:transform .2s}
+.more:hover .ic{transform:translateX(4px)}
+.arw{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);color:var(--ink);flex:none;transition:background .2s,color .2s,border-color .2s}
+a:hover>.arw,a:hover .arw{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px}
+/* bar */
+.bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:16px;min-height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Playfair Display",serif;font-weight:600;font-size:21px;white-space:nowrap}
+.logo i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--leaf);color:#fff;font-style:normal;font-size:16px}
+.logo b{color:var(--terra)}
+.nav{display:flex;gap:2px;margin-left:auto;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--mut);padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.nav a:hover{color:var(--ink)}
+.nav a.on{background:var(--peach);color:var(--ink)}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;place-items:center}
+.sheet{display:none;position:fixed;inset:66px 12px auto;z-index:29;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 24px 50px -24px rgba(21,59,53,.4)}
+.sheet.open{display:grid}
+.sheet a{min-height:48px;display:flex;align-items:center;padding:0 16px;border-radius:14px;text-decoration:none;font-weight:600}
+.sheet a.on{background:var(--peach)}
+/* hero */
+.hero{position:relative;padding-top:clamp(14px,1.6vw,26px);overflow:hidden}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.meta span{display:flex;align-items:center;gap:10px}
+.meta .ic{color:var(--terra)}
+.meta a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--mut)}
+.side{position:absolute;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);display:flex;gap:18px;align-items:center;white-space:nowrap}
+.side::before,.side::after{content:"";width:1px;height:40px;background:var(--line)}
+.side.l{left:max(1vw,6px);transform:translateY(-50%) rotate(180deg)}
+.side.r{right:max(1vw,6px)}
+.stage{position:relative;margin-top:6px}
+.word{font-family:Oswald,Impact,sans-serif;font-weight:700;line-height:.84;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;font-size:clamp(84px,21vw,400px);margin:0;color:var(--ink);text-align:center;position:relative;z-index:1}
+.hb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;position:relative;z-index:2}
+.htxt{padding:clamp(18px,2.4vw,40px) 0 clamp(24px,3vw,44px)}
+.hi{font-size:clamp(14px,1.1vw,17px);font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.name{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(44px,5.4vw,96px);line-height:1.14;letter-spacing:-.015em;text-transform:uppercase;margin-top:10px}
+.role{font-size:clamp(14px,1.1vw,18px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-top:14px}
+.htxt p.d{color:var(--mut);max-width:52ch;margin-top:12px;font-size:clamp(15px,1.05vw,17px)}
+.sig{font-family:"Dancing Script",cursive;font-size:clamp(30px,2.6vw,44px);line-height:1;margin-top:14px;color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pz{position:relative;min-height:clamp(380px,36vw,660px)}
+.disc{position:absolute;left:50%;bottom:0;width:min(88%,clamp(320px,31vw,600px));aspect-ratio:1;transform:translate(-50%,8%);border-radius:50%;background:var(--terra)}
+.person{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:calc(100% + clamp(70px,8vw,170px));width:auto;max-width:none;filter:drop-shadow(0 20px 30px rgba(21,59,53,.25))}
+.badge{position:absolute;right:2%;top:14%;width:clamp(110px,9vw,150px);aspect-ratio:1;border-radius:50%;background:var(--card);display:grid;place-items:center;box-shadow:0 14px 30px -16px rgba(21,59,53,.5)}
+.badge svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 18s linear infinite}
+.badge b{font-family:Oswald,sans-serif;font-size:clamp(24px,2vw,32px);line-height:1;color:var(--terra);text-align:center}
+.badge b small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:11px;font-weight:600;color:var(--ink);line-height:1.2;margin-top:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;background:var(--card);border-radius:18px;padding:10px 14px;box-shadow:0 14px 30px -18px rgba(21,59,53,.55);font-size:13px;line-height:1.25;color:var(--mut)}
+.chip b{display:block;font-family:"Playfair Display",serif;font-size:24px;line-height:1;color:var(--ink)}
+.chip i{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--mint);color:var(--leaf)}
+.chip.a{left:2%;top:34%}
+.chip.b{left:6%;bottom:12%}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.9fr);gap:clamp(18px,2.4vw,40px);padding:clamp(16px,1.8vw,26px);align-items:center}
+.about .ph{border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--mint)}
+.about .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.about p+p{margin-top:10px}
+.about .tx p{color:var(--mut)}
+.st{display:grid;gap:12px}
+.st div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center}
+.st i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--peach);color:var(--terra)}
+.st b{display:block;font-family:"Playfair Display",serif;font-size:26px;line-height:1}
+.st span{font-size:13px;color:var(--mut)}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.sv{padding:20px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
+.sv:hover{transform:translateY(-4px);box-shadow:0 20px 36px -26px rgba(21,59,53,.6)}
+.sv i{display:grid;place-items:center;width:52px;height:52px;border-radius:16px}
+.sv:nth-child(odd) i{background:var(--peach);color:var(--terra)}
+.sv:nth-child(even) i{background:var(--mint);color:var(--leaf)}
+.sv h3{font-size:17px;line-height:1.3}
+.sv p{font-size:14px;color:var(--mut)}
+/* projects */
+.pg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pj{text-decoration:none;display:flex;flex-direction:column;gap:12px}
+.pj .im{border-radius:20px;overflow:hidden;aspect-ratio:4/3.2;background:var(--mint)}
+.pj .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pj:hover .im img{transform:scale(1.05)}
+.pj .cp{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px}
+.pj .n{font-family:"Playfair Display",serif;font-size:30px;line-height:1;color:var(--terra);grid-row:span 2}
+.pj h3{font-size:16px;line-height:1.3}
+.pj small{font-size:13px;color:var(--mut)}
+.pj p{grid-column:2;font-size:14px;color:var(--mut)}
+.pl2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin-top:20px}
+.rw{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 16px}
+.rw .n{font-family:"Playfair Display",serif;font-size:22px;color:var(--terra);width:1.6em}
+.rw b{display:block;font-size:15px}
+.rw span{font-size:13px;color:var(--mut)}
+.rw em{font-style:normal;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.rw em.d{background:var(--mint);color:var(--leaf)}
+.rw em.t{background:var(--peach);color:#a2452b}
+.rw .th{width:56px;height:44px;border-radius:10px;overflow:hidden}
+.rw .th img{width:100%;height:100%;object-fit:cover}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+/* impact */
+.imp{background:linear-gradient(120deg,#153B35,#1f5a46);color:#eaf3ee;border-radius:28px;padding:clamp(24px,3vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr) minmax(0,1.3fr);gap:clamp(20px,3vw,48px);align-items:center}
+.imp .eye{color:#f3b79f}
+.imp h2{font-family:"Playfair Display",serif;font-size:clamp(26px,2.4vw,38px);line-height:1.1;margin-top:8px}
+.ist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ist div{text-align:center;padding:8px;border-left:1px solid rgba(255,255,255,.14)}
+.ist div:first-child{border-left:0}
+.ist b{display:block;font-family:"Playfair Display",serif;font-size:clamp(32px,3vw,48px);line-height:1;color:#fff}
+.ist span{display:block;font-size:13px;color:#b9d1c6;margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:13px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+/* process */
+.proc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,3fr);gap:clamp(20px,3vw,48px);align-items:start}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative}
+.steps::before{content:"";position:absolute;left:26px;right:26px;top:26px;border-top:1.5px dashed #cdbfae}
+.sp{position:relative}
+.sp i{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--card);border:1.5px solid var(--line);font-style:normal;font-family:"Playfair Display",serif;font-size:18px;color:var(--terra);margin-bottom:10px}
+.sp b{display:block;font-size:15px}
+.sp span{font-size:13px;color:var(--mut)}
+.pkg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.pkg div{padding:12px 16px;border-radius:16px;background:var(--card);border:1px solid var(--line);font-size:14px}
+.pkg b{display:block;font-size:14px}
+.pkg span{color:var(--mut);font-size:13px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,12vw,240px);gap:12px}
+.gal button{position:relative;padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--mint)}
+.gal button:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal button:nth-child(6){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.05)}
+.gal span{position:absolute;left:10px;bottom:10px;background:rgba(255,253,249,.92);color:var(--ink);font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(14,30,27,.94);display:none;place-items:center;padding:16px}
+.lb.open{display:grid}
+.lb img{max-width:min(1200px,100%);max-height:78vh;border-radius:14px}
+.lb p{color:#e7efe9;text-align:center;margin-top:12px}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:grid;place-items:center;font-size:22px}
+/* press */
+.press{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:16px;align-items:stretch}
+.pod{display:flex;flex-direction:column;overflow:hidden;background:#153B35;color:#eaf3ee;border-radius:24px}
+.vid{position:relative;aspect-ratio:16/9;background:#0e2420}
+.vid img,.vid iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.vplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s}
+.vplay:hover{transform:translate(-50%,-50%) scale(1.08)}
+.pod .b{padding:20px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pod small{font-size:13px;color:#b9d1c6}
+.pod h3{font-family:"Playfair Display",serif;font-size:clamp(22px,1.8vw,28px);line-height:1.15}
+.pod p{font-size:14px;color:#cfe0d8}
+.pod .more{color:#f3b79f;margin-top:auto}
+.pl{display:grid;gap:10px}
+.pl a{display:grid;grid-template-columns:clamp(110px,10vw,170px) minmax(0,1fr) 40px;gap:16px;align-items:center;padding:10px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.pl a:hover{transform:translateY(-2px);box-shadow:0 16px 30px -24px rgba(21,59,53,.6)}
+.pl .th{aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:var(--mint)}
+.pl .th img{width:100%;height:100%;object-fit:cover}
+.pl small{font-size:12px;color:var(--mut)}
+.pl small b{color:var(--terra);font-weight:600}
+.pl h3{font-size:15px;line-height:1.35;margin:2px 0}
+.pl p{font-size:13px;color:var(--mut);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+/* reports */
+.rbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.rbar button{min-height:42px;min-width:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 14px "Be Vietnam Pro",sans-serif;cursor:pointer;display:grid;place-items:center}
+.rbar button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 2px 12px;scrollbar-width:thin}
+.cov{flex:0 0 clamp(250px,20vw,340px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;text-decoration:none}
+.cov .im{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--mint);box-shadow:0 14px 28px -20px rgba(21,59,53,.55);transition:transform .3s}
+.cov:hover .im{transform:translateY(-4px)}
+.cov .im img{width:100%;height:100%;object-fit:cover}
+.cov .im em{position:absolute;right:10px;top:10px;font-style:normal;font-size:11px;font-weight:700;background:var(--terra);color:#fff;padding:3px 9px;border-radius:999px}
+.cov .cp{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-inline:4px}
+.cov b{font-family:Oswald,sans-serif;font-size:22px;line-height:1;text-transform:uppercase}
+.cov span{font-size:12px;color:var(--mut);white-space:nowrap}
+.cov .im i{position:absolute;inset:auto 10px 10px auto;font-style:normal;font-size:12px;font-weight:600;background:rgba(255,253,249,.94);color:var(--ink);padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:6px}
+.rd{position:fixed;inset:0;z-index:70;background:#e9e4da;display:none;flex-direction:column}
+.rd.open{display:flex}
+.rd header{display:flex;align-items:center;gap:12px;padding:10px max(3vw,12px);background:var(--bg);border-bottom:1px solid var(--line)}
+.rd header h3{font-family:"Playfair Display",serif;font-size:clamp(16px,1.6vw,22px);line-height:1.2}
+.rd header small{display:block;font-size:12px;color:var(--mut);font-family:"Be Vietnam Pro",sans-serif;font-weight:500}
+.rd header .sp{margin-left:auto;font-size:13px;color:var(--mut);white-space:nowrap}
+.rd .bk{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;display:grid;place-items:center;color:var(--ink);flex:none}
+.rd .pages{flex:1;overflow-y:auto;padding:16px max(2vw,8px) 40px;display:flex;flex-direction:column;align-items:center;gap:14px;scroll-behavior:smooth}
+.rd .pages img{width:min(100%,1280px);aspect-ratio:16/9;height:auto;background:#fff;border-radius:6px;box-shadow:0 10px 30px -18px rgba(0,0,0,.45)}
+.rd .ld{margin:auto;color:var(--mut);font-size:15px}
+/* journey */
+.jr{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,1fr);gap:16px;align-items:start}
+.tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.it{padding:18px 20px}
+.it .d{display:inline-block;font-size:12px;font-weight:700;color:var(--terra);background:var(--peach);padding:4px 10px;border-radius:999px}
+.it.now{background:#153B35;color:#eaf3ee;border-color:#153B35}
+.it.now .d{background:var(--terra);color:#fff}
+.it h3{font-family:"Playfair Display",serif;font-size:21px;line-height:1.15;margin-top:10px}
+.it .u{font-size:14px;color:var(--mut)}
+.it.now .u,.it.now li{color:#cfe0d8}
+.it ul{margin:8px 0 0;padding-left:18px;font-size:14px}
+.edu{padding:20px;display:grid;gap:14px}
+.edu div{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px}
+.edu i{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--mint);color:var(--leaf)}
+.edu b{display:block;font-size:15px}
+.edu span{font-size:13px;color:var(--mut)}
+.edu .chips{display:flex;flex-wrap:wrap;gap:6px}
+.edu .chips span{font-size:12px;padding:5px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+/* cta + contact */
+.ctab{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(110deg,#D9694A,#E99273 55%,#F3C2A6);color:#fff;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,.8fr);gap:24px;align-items:center;padding:clamp(24px,3vw,44px) clamp(24px,3vw,48px) 0}
+.ctab .eye{color:#fff}
+.ctab h2{font-family:"Playfair Display",serif;font-size:clamp(30px,3vw,48px);line-height:1.05;margin:8px 0 18px}
+.ctt{padding-bottom:clamp(24px,3vw,44px)}
+.ctab p{font-size:15px;margin-bottom:16px;max-width:40ch}
+.ctab .hand{font-family:"Dancing Script",cursive;font-size:clamp(22px,1.8vw,30px);line-height:1.1;position:absolute;right:30%;top:22px;transform:rotate(-6deg);opacity:.95}
+.ctab .pp{align-self:end;position:relative;height:100%;min-height:clamp(260px,22vw,360px)}
+.ctab .pp::before{content:"";position:absolute;left:50%;bottom:-30%;width:90%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:rgba(255,255,255,.22)}
+.ctab .pp img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.ct{display:grid;grid-template-columns:minmax(0,1.2fr) auto minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:center;margin-top:clamp(28px,3vw,44px)}
+.ct h2{font-family:"Playfair Display",serif;font-size:clamp(28px,2.6vw,44px);line-height:1.28;text-transform:uppercase}
+.ct h2 em{display:inline-block;margin-top:.08em}
+.ct h2 em{font-style:normal;color:var(--terra)}
+.qr{display:flex;align-items:center;gap:14px;padding-inline:clamp(0px,2vw,36px);border-inline:1px solid var(--line)}
+.qr svg{width:104px;height:104px;color:var(--ink);background:#fff;padding:8px;border-radius:12px}
+.qr span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+.qr em{display:block;font-family:"Dancing Script",cursive;font-size:22px;letter-spacing:0;text-transform:none;font-weight:600;color:var(--terra)}
+.cl{display:grid;gap:4px}
+.cl a{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:center;min-height:48px;text-decoration:none;font-size:15px}
+.cl a i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--peach);color:var(--terra)}
+.cl a:hover span{color:var(--terra)}
+footer{border-top:1px solid var(--line);margin-top:clamp(28px,3vw,44px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:18px;font-size:13px;color:var(--mut)}
+footer a{text-decoration:none}
+/* responsive */
+@media(max-width:1280px){.svc{grid-template-columns:repeat(3,minmax(0,1fr))}.imp{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.imp .tags{grid-column:1/-1}}
+@media(max-width:1180px){.nav{display:none}.burger{display:grid}.side{display:none}.about{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}.about .st{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr))}.proc{grid-template-columns:minmax(0,1fr)}.jr{grid-template-columns:minmax(0,1fr)}.ctab{grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr)}.ctab>p{display:none}}
+@media(max-width:900px){.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.pl2{grid-template-columns:minmax(0,1fr)}.press{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}.steps::before{display:none}.pkg{grid-template-columns:minmax(0,1fr)}.ct{grid-template-columns:minmax(0,1fr) auto}.ct>div:first-child{grid-column:1/-1}.qr{border:0;padding:0}.imp{grid-template-columns:minmax(0,1fr)}.ist{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}.ist div:nth-child(3){border-left:0}}
+@media(max-width:760px){.hb{grid-template-columns:minmax(0,1fr)}.pz{order:-1;min-height:300px;margin-top:-6px}.person{height:calc(100% + 8px)}.disc{width:270px}.badge{width:100px;right:0;top:8%}.badge b{font-size:22px}.chip{padding:8px 10px}.chip b{font-size:19px}.chip i{display:none}.chip.a{left:0;top:30%}.chip.b{left:auto;right:0;bottom:8%}.htxt{padding-top:16px}.about{grid-template-columns:minmax(0,1fr)}.about .st{grid-template-columns:repeat(2,minmax(0,1fr))}.tl{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:140px}.gal button:nth-child(6){grid-column:span 1}.gal button:nth-child(8){grid-column:span 2}.ctab{grid-template-columns:minmax(0,1fr);padding-bottom:0}.ctab .hand{display:none}.ctt{padding-bottom:4px}.ctab .pp{min-height:260px}.ct{grid-template-columns:minmax(0,1fr)}.qr{order:3}}
+@media(max-width:560px){#yrs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%}#yrs button{flex:none;min-height:40px;padding:0 14px}#prev,#next{display:none}.shd .rbar{width:100%}.cov{flex-basis:78vw}#navcta{display:none}.svc{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sv{padding:14px}.sv i{width:44px;height:44px}.sv p{font-size:13px}.pg{grid-template-columns:minmax(0,1fr)}.pj .im{aspect-ratio:16/10}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.pl a{grid-template-columns:96px minmax(0,1fr);gap:12px}.pl a .arw{display:none}.rw{grid-template-columns:auto minmax(0,1fr);padding:10px 12px}.rw em{grid-column:2;justify-self:start}.meta a{display:none}.cta .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.badge svg{animation:none}.btn,.sv,.pj .im img,.gal img,.pl a{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+<symbol id="i-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6M16 4.5a3.5 3.5 0 0 1 0 7M22 20c0-2.6-1.9-4.8-4.5-5.6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor"/></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+</defs></svg>
+
+<header class="bar"><div class="wrap">
+<a class="logo" href="#top"><i>D</i>Minh Dũng<b>.</b></a>
+<nav class="nav" id="nav" aria-label="Các mục"></nav>
+<a class="btn" href="#lien-he" id="navcta">Kết nối <svg class="ic"><use href="#i-arrow"/></svg></a>
+<button class="burger" id="burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="sheet"><svg class="ic"><use href="#i-menu"/></svg></button>
+</div></header>
+<nav class="sheet" id="sheet" aria-label="Menu di động"></nav>
+
+<main>
+<section class="hero" id="top">
+<p class="side l">Nghiên cứu thị trường <span>·</span> Phát triển sản phẩm</p>
+<p class="side r">Đóng gói sản phẩm <span>·</span> Truyền thông chuyên gia</p>
+<div class="wrap">
+<div class="meta"><span><svg class="ic"><use href="#i-star"/></svg>R&amp;D · Bất động sản dự án</span><a href="#lien-he">Sẵn sàng hợp tác <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<div class="stage">
+<h1 class="word" id="word" aria-label="Portfolio – Hoàng Hữu Minh Dũng">Portfolio</h1>
+<div class="hb">
+<div class="htxt">
+<p class="hi">Xin chào, tôi là</p>
+<h2 class="name">Hoàng Hữu<br>Minh Dũng</h2>
+<p class="role">Trưởng ban Nghiên cứu &amp; Phát triển · BHS Group</p>
+<p class="d">Hơn 10 năm đi trọn chuỗi giá trị bất động sản dự án: marketing số, tư vấn bán hàng, đồng sáng lập sàn, quản lý dự án, rồi dẫn dắt nghiên cứu thị trường và phát triển sản phẩm trên toàn quốc.</p>
+<div class="cta"><a class="btn" href="#du-an">Xem dự án <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn o" href="#lien-he">Kết nối</a></div>
+</div>
+<div class="pz">
+<div class="disc"></div>
+<img class="person" src="img/cut-hero.webp" alt="Hoàng Hữu Minh Dũng thuyết trình tại sự kiện Gold Coast Vũng Tàu" width="742" height="1036">
+<div class="badge"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text font-size="8" font-weight="700" fill="#153B35" font-family="Be Vietnam Pro, sans-serif" textLength="232" lengthAdjust="spacing"><textPath href="#ring" textLength="232" lengthAdjust="spacing">SẴN SÀNG HỢP TÁC • R&amp;D BẤT ĐỘNG SẢN •</textPath></text></svg><b>10+<small>năm</small></b></div>
+<div class="chip a"><i><svg class="ic"><use href="#i-db"/></svg></i><span><b>~5.000</b>dự án trong kho dữ liệu</span></div>
+<div class="chip b"><i><svg class="ic"><use href="#i-chart"/></svg></i><span><b>500+</b>dự án trực tiếp nghiên cứu</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="gioi-thieu" style="padding-top:clamp(20px,2vw,32px)"><div class="wrap">
+<div class="card about">
+<div class="ph"><img src="img/about.webp" alt="Minh Dũng giới thiệu quy hoạch tại sự kiện Thung Lũng Thanh Xuân" width="1100" height="825" loading="lazy"></div>
+<div class="tx">
+<span class="eye">Giới thiệu</span>
+<h2 class="h2" style="font-size:clamp(26px,2.4vw,38px)">Biến dữ liệu thành <em>sản phẩm thị trường cần.</em></h2>
+<p style="margin-top:12px">Hơn 7 năm dẫn dắt Ban Nghiên cứu &amp; Phát triển tại BHS, tôi đứng ở điểm giao giữa thị trường và sản phẩm: nghiên cứu cung, cầu, giá và thanh khoản trên toàn quốc để giúp chủ đầu tư trả lời câu hỏi khó nhất của một dự án – làm sản phẩm gì, cho ai và bán như thế nào.</p>
+<p>Đi lên từ marketing số, bán hàng rồi quản lý dự án, tôi đưa vào mỗi đề xuất góc nhìn của người trực tiếp bán hàng, để sản phẩm không chỉ đúng trên giấy mà còn bán được ngoài thị trường – từ đô thị nghỉ dưỡng ven biển đến căn hộ nội đô.</p>
+</div>
+<div class="st" id="stats"></div>
+</div>
+</div></section>
+
+<section class="sec" id="chuyen-mon" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Chuyên môn</span><h2 class="h2">Năng lực &amp; <em>dịch vụ</em></h2></div></div>
+<div class="svc" id="svc"></div>
+</div></section>
+
+<section class="sec" id="du-an" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Dự án</span><h2 class="h2">Một số dự án <em>đã triển khai</em></h2></div><p class="l">Đóng gói và tư vấn sản phẩm cho các đô thị nghỉ dưỡng và khu căn hộ trên cả nước, trong giai đoạn tại BHS.</p></div>
+<div class="pg" id="pg"></div>
+<div class="pl2" id="pl2"></div>
+<p class="note">Thông tin dự án theo nguồn công khai của chủ đầu tư và báo chí.</p>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+<div class="imp">
+<div><span class="eye">Dấu ấn R&amp;D</span><h2>Dữ liệu dẫn đường cho mọi quyết định sản phẩm.</h2></div>
+<div class="ist"><div><b>706</b><span>dự án theo dõi liên tục</span></div><div><b>19</b><span>kỳ báo cáo thị trường từ 2021</span></div><div><b>16</b><span>nhân sự quy mô Ban R&amp;D</span></div><div><b>Toàn quốc</b><span>phạm vi nghiên cứu</span></div></div>
+<div class="tags"><span>Nghiên cứu thị trường</span><span>Kho dữ liệu dự án</span><span>Đánh giá dự án</span><span>Định vị sản phẩm</span><span>Giá bán &amp; CSBH</span><span>Chiến lược phân kỳ</span><span>Đào tạo sales</span><span>Ứng dụng AI</span></div>
+</div>
+</div></section>
+
+<section class="sec" id="quy-trinh" style="padding-top:0"><div class="wrap proc">
+<div><span class="eye">Quy trình</span><h2 class="h2">Tư vấn sản phẩm <em>theo vòng đời dự án</em></h2></div>
+<div>
+<div class="steps" id="steps"></div>
+<div class="pkg"><div><b>Gói 1 · Định hướng quy hoạch</b><span>Tiền dự án, chưa có 1/500 · 60–90 ngày</span></div><div><b>Gói 2 · Định hướng sản phẩm</b><span>Đã có quy hoạch 1/500 · 45–60 ngày</span></div><div><b>Gói 3 · Phát triển sản phẩm</b><span>Đã có 1/500 và thiết kế · 45–60 ngày</span></div></div>
+</div>
+</div></section>
+
+<section class="sec" id="hinh-anh" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Hình ảnh</span><h2 class="h2">Trên sân khấu <em>dự án</em></h2></div><p class="l">Thuyết trình chiến lược, quy hoạch và sản phẩm tại các sự kiện ra mắt, đào tạo và showcase.</p></div>
+<div class="gal" id="gal"></div>
+</div></section>
+<div class="rd" id="rd" role="dialog" aria-modal="true" aria-labelledby="rdt"><header><button class="bk" id="rdb" type="button" aria-label="Quay lại trang chính"><svg class="ic" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button><h3><span id="rdt"></span><small id="rds"></small></h3><span class="sp" id="rdp"></span></header><div class="pages" id="rpages"></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh"><button type="button" id="lbx" aria-label="Đóng" style="top:14px;right:14px">×</button><button type="button" id="lbp" aria-label="Ảnh trước" style="left:14px;top:50%"><svg class="ic" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button><figure style="margin:0"><img id="lbi" alt=""><p id="lbc"></p></figure><button type="button" id="lbn" aria-label="Ảnh sau" style="right:14px;top:50%"><svg class="ic"><use href="#i-arrow"/></svg></button></div>
+
+<section class="sec" id="bao-chi" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Báo chí</span><h2 class="h2">Báo chí &amp; <em>truyền thông</em></h2></div><p class="l">Nhận định thị trường được trích dẫn trên các báo kinh tế, bất động sản năm 2026.</p></div>
+<div class="press">
+<div class="pod"><div class="vid" id="vid"><img src="img/yt.jpg" alt="Ảnh bìa podcast #NgheKho EP04"><a class="vplay" id="vplay" href="https://www.youtube.com/watch?v=wnREVhRFvXY" target="_blank" rel="noopener" aria-label="Phát video podcast #NgheKho EP04"><svg class="ic" style="width:28px;height:28px"><use href="#i-play"/></svg></a></div>
+<div class="b"><small>Podcast #NgheKho EP04 · BHS × Người Trong Muôn Nghề · 13/08/2026</small><h3>Cái tôi, sự chủ quan và bài học 2.000 tỷ đồng trong R&amp;D</h3><p>Quy trình R&amp;D sản phẩm bất động sản, dữ liệu thời gian thực, cái giá khi thiên kiến cá nhân lấn át dữ liệu và vai trò của AI.</p><a class="more" href="https://www.youtube.com/watch?v=wnREVhRFvXY" target="_blank" rel="noopener">Xem trên YouTube <svg class="ic"><use href="#i-ne"/></svg></a></div></div>
+<div class="pl" id="press"></div>
+</div>
+</div></section>
+
+<section class="sec" id="bao-cao" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Báo cáo</span><h2 class="h2">Thư viện <em>báo cáo thị trường</em></h2></div><div class="rbar"><span id="yrs" class="rbar" role="group" aria-label="Chọn năm"></span><button type="button" id="prev" aria-label="Kỳ trước"><svg class="ic" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button><button type="button" id="next" aria-label="Kỳ sau"><svg class="ic"><use href="#i-arrow"/></svg></button></div></div>
+<div class="rail" id="rail" tabindex="0" aria-label="19 kỳ báo cáo thị trường, dùng phím mũi tên để cuộn"></div>
+
+</div></section>
+
+<section class="sec" id="hanh-trinh" style="padding-top:0"><div class="wrap">
+<div class="shd"><div><span class="eye">Hành trình</span><h2 class="h2">Hành trình <em>nghề nghiệp</em></h2></div><p class="l">Từ nội dung số đến bán hàng, khởi nghiệp, quản lý dự án rồi nghiên cứu và phát triển sản phẩm.</p></div>
+<div class="jr"><div class="tl" id="tl"></div>
+<div class="card edu"><div><i><svg class="ic"><use href="#i-cap"/></svg></i><p><b>Đại học Kinh tế Quốc dân</b><span>Cử nhân Quản trị Kinh doanh, chuyên ngành Bất động sản · 2009 – 2013</span></p></div><div><i><svg class="ic"><use href="#i-briefcase"/></svg></i><p><b>Kỹ năng nền tảng</b><span>Từ giai đoạn marketing số và bán hàng</span></p></div><div class="chips"><span>Facebook Ads</span><span>Google Ads</span><span>Content &amp; social media</span><span>Business planning</span><span>Thuyết trình</span></div></div>
+</div>
+</div></section>
+
+<section class="sec" id="lien-he" style="padding-top:0"><div class="wrap">
+<div class="ctab">
+<div class="ctt"><span class="eye">Cùng làm việc</span><h2>Có dự án cần định hướng sản phẩm?</h2><a class="btn w" href="https://www.linkedin.com/in/minhdung244/" target="_blank" rel="noopener">Kết nối ngay <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p>Sẵn sàng trao đổi về nghiên cứu thị trường, phát triển sản phẩm và hợp tác dự án.</p>
+<div class="pp"><img src="img/cut-cta.webp" alt="Ảnh chân dung Hoàng Hữu Minh Dũng" width="629" height="800" loading="lazy"></div>
+<span class="hand">Dữ liệu dẫn đường ♡</span>
+</div>
+<div class="ct">
+<div><h2>Cùng tạo nên<br><em>sản phẩm thị trường cần</em></h2><p style="color:var(--mut);margin-top:10px">Hà Nội, Việt Nam</p></div>
+<div class="qr"><svg viewBox="0 0 29 29" shape-rendering="crispEdges" aria-hidden="true"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM25 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM14 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM19 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM17 2h1v1h-1zM18 2h1v1h-1zM19 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM13 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM28 8h1v1h-1zM0 9h1v1h-1zM2 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM25 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM28 9h1v1h-1zM3 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM18 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM28 10h1v1h-1zM1 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM28 11h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM27 12h1v1h-1zM1 13h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM8 13h1v1h-1zM10 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM22 13h1v1h-1zM24 13h1v1h-1zM25 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM0 14h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM1 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM22 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM0 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM17 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM23 16h1v1h-1zM27 16h1v1h-1zM0 17h1v1h-1zM1 17h1v1h-1zM3 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM24 18h1v1h-1zM26 18h1v1h-1zM28 18h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM3 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM28 20h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM28 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM14 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM28 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM28 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM23 25h1v1h-1zM28 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM14 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM24 27h1v1h-1zM25 27h1v1h-1zM27 27h1v1h-1zM28 27h1v1h-1zM0 28h1v1h-1zM1 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM13 28h1v1h-1zM15 28h1v1h-1zM17 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM27 28h1v1h-1z" fill="currentColor"/></svg><span>Quét để kết nối<br>LinkedIn<em>Minh Dũng</em></span></div>
+<div class="cl" id="cl"></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Hoàng Hữu Minh Dũng · Trưởng ban Nghiên cứu &amp; Phát triển, BHS Group</span><a href="#top" class="more">Lên đầu trang ↑</a></div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SEC=[['gioi-thieu','Giới thiệu'],['chuyen-mon','Chuyên môn'],['du-an','Dự án'],['hinh-anh','Hình ảnh'],['bao-chi','Báo chí'],['bao-cao','Báo cáo'],['hanh-trinh','Hành trình'],['lien-he','Liên hệ']];
+const links=SEC.map(s=>`<a href="#${s[0]}" data-s="${s[0]}">${s[1]}</a>`).join('');
+$('nav').innerHTML=links;$('sheet').innerHTML=links;
+
+/* fit giant word to the container width */
+const word=$('word');
+const fit=()=>{word.style.fontSize='200px';const w=word.parentElement.clientWidth;const s=word.scrollWidth;word.style.fontSize=Math.min(560,200*w/s*0.995)+'px'};
+const ro=new ResizeObserver(fit);ro.observe(word.parentElement);
+if(document.fonts)document.fonts.ready.then(fit);
+
+const ST=[['i-db','~5.000','dự án trong kho R&D'],['i-chart','706','dự án theo dõi liên tục'],['i-layers','500+','dự án trực tiếp nghiên cứu'],['i-doc','19','báo cáo thị trường từ 2021']];
+$('stats').innerHTML=ST.map(s=>`<div><i><svg class="ic"><use href="#${s[0]}"/></svg></i><p><b>${esc(s[1])}</b><span>${esc(s[2])}</span></p></div>`).join('');
+
+const SV=[['i-chart','Nghiên cứu thị trường','Phân tích kinh tế – xã hội, cung, cầu, giá và thanh khoản trên toàn quốc.'],['i-db','Kho dữ liệu dự án','Chủ trì xây dựng kho gần 5.000 dự án, 706 dự án theo dõi liên tục.'],['i-doc','Báo cáo định kỳ','Chuỗi báo cáo thị trường theo quý, nửa năm và năm từ 2021.'],['i-bulb','Tư vấn phát triển sản phẩm','Cùng Ban Concept tư vấn quy hoạch, sản phẩm theo vòng đời dự án.'],['i-layers','Đóng gói sản phẩm','Concept, giá bán, chính sách bán hàng, chiến lược phân kỳ.'],['i-mic','Truyền thông chuyên gia','Xây dựng thương hiệu “BHS R&D” qua báo chí và podcast.']];
+$('svc').innerHTML=SV.map(s=>`<article class="card sv"><i><svg class="ic" style="width:24px;height:24px"><use href="#${s[0]}"/></svg></i><h3>${esc(s[1])}</h3><p>${esc(s[2])}</p></article>`).join('');
+
+const PR=[
+{img:'tx1',l:'Vĩnh Phúc',n:'Thung Lũng Thanh Xuân',t:'Quần thể ~166,8ha của BIM Land, vận hành IHG.'},
+{img:'gc1',l:'Bà Rịa – Vũng Tàu',n:'Gold Coast Vũng Tàu',t:'CĐT Gold Coast Holdings. BHS Property đồng hành tư vấn và triển khai chiến lược.'},
+{img:'do1',l:'Hải Phòng',n:'Dragon Ocean – Đồi Rồng Đồ Sơn',t:'Dự án của Geleximco, BHS Group hợp tác phát triển kinh doanh.'},
+{img:'cm1',l:'Phú Mỹ',n:'CityMark Residences',t:'1.248 căn hộ, 55 shophouse. BHS Group là đơn vị tư vấn phát triển kinh doanh.'}];
+$('pg').innerHTML=PR.map((p,i)=>`<article class="pj"><div class="im"><img src="img/${p.img}.webp" alt="${esc(p.n)}" loading="lazy"></div><div class="cp"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${esc(p.n)}</h3><small>Đóng gói sản phẩm · ${esc(p.l)}</small><p>${esc(p.t)}</p></div></article>`).join('');
+const RS=[['Para Sol – KN Paradise','Cam Ranh · Phân khu thấp tầng trong quần thể 800ha','d'],['A La Carte Hạ Long','Hạ Long · CĐT TasecoLand, thiết kế Aedas','d'],['Safabay','Cẩm Phả, Quảng Ninh · Dự án 39,33ha của Tập đoàn TTP','d','sf2'],['Khu đô thị Vĩnh Hưng','Quảng Bình · Quy mô 500ha','t'],['Icon40 Hạ Long','Hạ Long · Syrena – BIM Group, 40 tầng, 804 căn hộ','t'],['Cao tầng Tây Tựu','Hà Nội · Căn hộ cao tầng','t'],['Cao tầng Khu Tây Hồ Tây','Hà Nội · Căn hộ cao tầng','t'],['Xem hình ảnh sự kiện','Gold Coast, Thanh Xuân, CityMark, Sonasea…','x']];
+$('pl2').innerHTML=RS.map((r,i)=>r[2]=='x'?`<a class="card rw" href="#hinh-anh" style="text-decoration:none"><span class="n">→</span><p><b>${esc(r[0])}</b><span>${esc(r[1])}</span></p><span class="arw"><svg class="ic"><use href="#i-arrow"/></svg></span></a>`:`<div class="card rw"><span class="n">${r[3]?`<span class="th"><img src="img/${r[3]}.webp" alt="" loading="lazy"></span>`:String(i+5).padStart(2,'0')}</span><p><b>${r[3]?String(i+5).padStart(2,'0')+' · ':''}${esc(r[0])}</b><span>${esc(r[1])}</span></p><em class="${r[2]}">${r[2]=='d'?'Đóng gói':'Tư vấn'} sản phẩm</em></div>`).join('');
+
+const SP=[['Nghiên cứu thị trường','Cung, cầu, giá, thanh khoản khu vực'],['Chiến lược tổng thể','Định vị dự án và khách hàng'],['Định hướng ý tưởng','Đầu bài định hướng cho Concept và Marketing'],['Chiến lược sản phẩm','Cơ cấu, dòng sản phẩm, đầu bài thiết kế'],['Chiến lược kinh doanh','Phân kỳ, giá bán, marketing']];
+$('steps').innerHTML=SP.map((s,i)=>`<div class="sp"><i>${String(i+1).padStart(2,'0')}</i><b>${esc(s[0])}</b><span>${esc(s[1])}</span></div>`).join('');
+
+const G=[['gc2','Gold Coast Vũng Tàu · Cơ hội BĐS khu vực Đông Nam TP.HCM'],['tx7','Thung Lũng Thanh Xuân · Talkshow BIM Land × BHS × WATG'],['cm2','CityMark Residences · Phú Mỹ trong tương quan cung – cầu'],['tx2','Thung Lũng Thanh Xuân · Quy hoạch tổng thể'],['gc4','Gold Coast Vũng Tàu · Giới thiệu dự án'],['cm4','CityMark Residences · Sự kiện giới thiệu dự án'],['tx8','Thung Lũng Thanh Xuân · Valley Park Residences'],['sn1','Wyndham Garden Sonasea Vân Đồn · Sự kiện Sneak Peek dòng Homeliday'],['tx3','Thung Lũng Thanh Xuân · Đào tạo đội ngũ kinh doanh'],['cm3','CityMark Residences · Bà Rịa – Vũng Tàu'],['gc5','Gold Coast Vũng Tàu · Hội trường sự kiện'],['tx9','Thung Lũng Thanh Xuân · Sự kiện giới thiệu dự án'],['tx4','Thung Lũng Thanh Xuân · Thông tin tổng quan'],['gc3','Gold Coast Vũng Tàu · Cộng đồng cư dân'],['tx5','Thung Lũng Thanh Xuân · Đào tạo thực địa'],['tx6','Thung Lũng Thanh Xuân · Đào tạo ngoài trời']];
+$('gal').innerHTML=G.map((g,i)=>`<button type="button" data-i="${i}" aria-label="Phóng to ảnh: ${esc(g[1])}"><img src="img/${g[0]}.webp" alt="${esc(g[1])}" loading="lazy"><span>${esc(g[1].split(' · ')[0])}</span></button>`).join('');
+let gi=0;const lb=$('lb');
+const showG=i=>{gi=(i+G.length)%G.length;$('lbi').src=`img/${G[gi][0]}.webp`;$('lbi').alt=G[gi][1];$('lbc').textContent=G[gi][1]};
+$('gal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;showG(+b.dataset.i);lb.classList.add('open');$('lbx').focus()});
+const closeLb=()=>lb.classList.remove('open');
+$('lbx').onclick=closeLb;$('lbp').onclick=()=>showG(gi-1);$('lbn').onclick=()=>showG(gi+1);
+lb.addEventListener('click',e=>{if(e.target==lb)closeLb()});
+
+const P=[['12/08/2026','Reatimes','Thị trường BĐS 6 tháng cuối năm 2026: Dòng tiền chọn lọc định hình “luật chơi” mới','Thị trường phân hóa; điểm nghẽn là khả năng chi trả chứ không phải nguồn cung; BHS Property dự báo gần 100.000 căn nhà ở ra hàng nửa cuối năm.','https://reatimes.vn/thi-truong-bat-dong-san-6-thang-cuoi-nam-2026-dong-tien-chon-loc-dinh-hinh-luat-choi-moi-202240806183041248.htm','6'],
+['14/04/2026','Báo Xây dựng','Thị trường BĐS trầm lắng: Cơ hội thanh lọc và nâng chuẩn nghề môi giới','Tín dụng siết từ Q4/2025; môi giới cần chọn lọc dự án pháp lý rõ, phục vụ nhu cầu ở thực.','https://batdongsan.baoxaydung.vn/thi-truong-bat-dong-san-tram-lang-co-hoi-thanh-loc-va-nang-chuan-nghe-moi-gioi-192260414094139538.htm'],
+['04/06/2026','VietnamFinance','Thị trường BĐS đang được hỗ trợ bởi 4 động lực chính','Pháp lý, hạ tầng, nhu cầu ở thực và lãi suất ổn định hơn dẫn dắt phục hồi chọn lọc.','https://vietnamfinance.vn/thi-truong-bat-dong-san-dang-duoc-ho-tro-boi-4-dong-luc-chinh-d145742.html'],
+['21/08/2026','Thời báo Tài chính Việt Nam','Dòng tiền “khó tính”, BĐS đứng trước yêu cầu nâng chất','Thanh khoản phân hóa; H1/2026 tỷ lệ hấp thụ căn hộ TP.HCM gần 80%.','https://thoibaotaichinhvietnam.vn/dong-tien-kho-tinh-bat-dong-san-dung-truoc-yeu-cau-nang-chat-202664.html'],
+['04/09/2026','CafeF','Thị trường BĐS phân hóa, môi giới thay đổi chiến lược bán hàng','Chi phí môi giới tăng, tỷ lệ chốt giảm buộc thị trường chọn lọc sản phẩm.','https://cafef.vn/thi-truong-bat-dong-san-phan-hoa-moi-gioi-thay-doi-chien-luoc-ban-hang-188260904071231209.chn'],
+['09/09/2026','Tạp chí Kinh tế – Tài chính','Doanh nghiệp BĐS đứng giữa bài toán sản phẩm, giá bán và sức mua thực tế','Từ “bán cái có sẵn” sang “tạo sản phẩm thị trường cần”.','https://tapchikinhtetaichinh.vn/doanh-nghiep-bat-dong-san-dung-giua-bai-toan-san-pham-gia-ban-va-suc-mua-thuc-te-166537.html']];
+$('press').innerHTML=P.map((p,i)=>`<a class="card" href="${esc(p[4])}" target="_blank" rel="noopener"><span class="th"><img src="img/press-${p[5]||i}.jpg" alt="" loading="lazy"></span><div><small><b>${esc(p[1])}</b> · ${esc(p[0])}</small><h3>${esc(p[2])}</h3><p>${esc(p[3])}</p></div><span class="arw"><svg class="ic"><use href="#i-ne"/></svg></span></a>`).join('');
+
+const R=[['2026','H1.2026','BHS Property'],['2026','Q1.2026','BHS Property'],['2025','Năm 2025','BHS Property'],['2025','9T.2025','BHS Property'],['2025','H1.2025','BHS Property'],['2025','Q1.2025','BHS Group'],['2024','Năm 2024','BHS Group'],['2024','Q3.2024','BHS Group'],['2024','H1.2024','BHS Group'],['2024','Q1.2024','BHS Group'],['2023','Năm 2023','BHS Group'],['2023','Q3.2023','BHS Group'],['2023','H1.2023','BHS Group'],['2023','Q1.2023','BHS Group'],['2022','Năm 2022','BHS Group'],['2022','Q3.2022','BHS Group'],['2022','6T.2022','BHS Group'],['2022','Q1.2022','BHS Group'],['2021','Năm 2021','BHS Group']];
+const rail=$('rail');
+const NP=[57,59,80,65,67,57,82,48,54,53,60,49,52,46,71,44,39,26,78];
+rail.innerHTML=R.map((r,i)=>`<a class="cov" id="r${i}" href="#doc-${String(i+1).padStart(2,'0')}" aria-label="Đọc báo cáo thị trường BĐS ${esc(r[1])}, ${NP[i]} trang"><div class="im"><img src="img/bc/bc-${String(i+1).padStart(2,'0')}.webp" alt="" loading="lazy">${i==0?'<em>Mới nhất</em>':''}<i><svg class="ic" style="width:15px;height:15px"><use href="#i-doc"/></svg>Đọc · ${NP[i]} trang</i></div><div class="cp"><b>${esc(r[1])}</b><span>${esc(r[2])}</span></div></a>`).join('');
+const rd=$('rd'),rpg=$('rpages');let rdFrom=false;const cache={};
+const openDoc=async k=>{const i=+k-1;if(!(i>=0&&i<R.length))return;rd.classList.add('open');document.body.style.overflow='hidden';$('rdt').textContent='Báo cáo thị trường BĐS '+R[i][1];$('rds').textContent=R[i][2]+' · Ban Nghiên cứu & Phát triển';$('rdp').textContent=NP[i]+' trang';rpg.scrollTop=0;rpg.innerHTML='<p class="ld">Đang tải báo cáo…</p>';
+try{const d=cache[k]||(cache[k]=await fetch('r/'+k+'.json').then(x=>{if(!x.ok)throw 0;return x.json()}));if(!rd.classList.contains('open'))return;rpg.innerHTML='';d.forEach((src,j)=>{const im=new Image();im.src=src;im.alt='Trang '+(j+1)+' / '+d.length;im.loading='lazy';im.decoding='async';rpg.appendChild(im)})}catch(e){rpg.innerHTML='<p class="ld">Không tải được báo cáo. Sếp thử tải lại trang.</p>'}};
+const closeDoc=()=>{rd.classList.remove('open');document.body.style.overflow='';rpg.innerHTML=''};
+const route=()=>{const m=location.hash.match(/^#doc-(\d\d)$/);if(m)openDoc(m[1]);else if(rd.classList.contains('open'))closeDoc()};
+rail.addEventListener('click',e=>{if(e.target.closest('.cov'))rdFrom=true});
+$('rdb').onclick=()=>{if(rdFrom){rdFrom=false;history.back()}else{closeDoc();location.hash='bao-cao'}};
+window.addEventListener('hashchange',route);route();
+const yrs=[...new Set(R.map(r=>r[0]))];
+$('yrs').innerHTML=yrs.map((y,i)=>`<button type="button" data-y="${y}" aria-pressed="${i==0}">${y}</button>`).join('');
+$('yrs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=R.findIndex(r=>r[0]==b.dataset.y);rail.scrollTo({left:$('r'+i).offsetLeft-rail.offsetLeft,behavior:'smooth'});$('yrs').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x==b))});
+const step=d=>rail.scrollBy({left:d*rail.querySelector('.cov').offsetWidth,behavior:'smooth'});
+$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
+rail.addEventListener('keydown',e=>{if(e.key=='ArrowRight'){e.preventDefault();step(1)}if(e.key=='ArrowLeft'){e.preventDefault();step(-1)}});
+
+const L=[['07/2019 – nay','Trưởng ban Nghiên cứu & Phát triển','BHS Group',['Bổ nhiệm Trưởng ban Nghiên cứu & Phát triển ngày 15/10/2021','Dẫn dắt nghiên cứu thị trường toàn quốc và phát triển sản phẩm, quy mô ban đến 16 nhân sự']],
+['07/2017 – 07/2019','Project Manager','Cenland – Cengroup',['The Emerald (CT8 Mỹ Đình): bán hơn 1.000 căn trong 8 tháng','987 Tam Trinh, T-Place Hàng Bài: bán hết trong 1 tuần; T-Place giá 300 triệu/m²']],
+['03/2016 – 04/2017','Đồng sáng lập','Megaland',['Tư vấn bán hàng Goldseason, An Bình City, FLC Star Tower','Tự triển khai Facebook Ads, Google Ads; đồng quản lý đội 7 người']],
+['2014 – 2016','Phát triển cộng đồng & tư vấn BĐS','VinEcom – Vingroup · An Cư · Cenland',['Nội dung website, fanpage Adayroi.net (04/2014 – 04/2015)','Tư vấn Vinhomes Riverside (An Cư), Imperia Garden (Cenland)']]];
+$('tl').innerHTML=L.map((l,i)=>`<div class="card it${i==0?' now':''}"><span class="d">${esc(l[0])}</span><h3>${esc(l[1])}</h3><p class="u">${esc(l[2])}</p><ul>${l[3].map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
+
+const C=[['i-in','linkedin.com/in/minhdung244','https://www.linkedin.com/in/minhdung244/'],['i-globe','bhsgroup.vn','https://bhsgroup.vn'],['i-pin','Hà Nội, Việt Nam','']];
+$('cl').innerHTML=C.map(c=>c[2]?`<a href="${esc(c[2])}" target="_blank" rel="noopener"><i><svg class="ic"><use href="#${c[0]}"/></svg></i><span>${esc(c[1])}</span></a>`:`<a><i><svg class="ic"><use href="#${c[0]}"/></svg></i><span>${esc(c[1])}</span></a>`).join('');
+
+$('vplay').addEventListener('click',e=>{let top=false;try{top=window.top===window.self}catch(err){}if(!top)return;e.preventDefault();$('vid').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/wnREVhRFvXY?autoplay=1&rel=0" title="Podcast #NgheKho EP04" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'});
+
+const sheet=$('sheet'),burger=$('burger');
+const closeSheet=()=>{sheet.classList.remove('open');burger.setAttribute('aria-expanded','false')};
+burger.onclick=()=>{const o=sheet.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+sheet.addEventListener('click',e=>{if(e.target.closest('a'))closeSheet()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape'){closeSheet();closeLb();if(rd.classList.contains('open'))$('rdb').click()}if(lb.classList.contains('open')){if(e.key=='ArrowRight')showG(gi+1);if(e.key=='ArrowLeft')showG(gi-1)}});
+const spy=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)document.querySelectorAll('[data-s]').forEach(a=>a.classList.toggle('on',a.dataset.s==en.target.id))})},{rootMargin:'-45% 0px -50% 0px'});
+SEC.forEach(s=>{const el=$(s[0]);if(el)spy.observe(el)});
+}
+</script>
+</body>
+</html>
